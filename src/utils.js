@@ -10,6 +10,10 @@ export const oneOrMoreRenderableChildrenPropType = {
   children: oneOrMoreRenderablePropType
 };
 
+export const oneOrMoreRenderableChildrenRequiredPropType = {
+  children: oneOrMoreRenderablePropType.isRequired
+};
+
 export const classNamePropType = {
   className: PropTypes.string
 };

@@ -35,6 +35,7 @@ export Container from './Container';
 export Empty from './Empty';
 export EmptyMeta from './EmptyMeta';
 export EmptyTitle from './EmptyTitle';
+export Loading from './Loading';
 export Navbar from './Navbar';
 export NavbarBrand from './NavbarBrand';
 export NavbarSection from './NavbarSection';

@@ -5,7 +5,7 @@ import { ColumnClassNames } from './Column';
 import {
   allChildrenAreOneOfTypePropType,
   classNamePropType,
-  oneOrMoreRenderableChildrenPropType,
+  oneOrMoreRenderableChildrenRequiredPropType,
   composePropTypes
 } from './utils';
 
@@ -43,7 +43,7 @@ const Columns = ({ children, withContainer, with960Container, with480Container, 
 
 Columns.propTypes = composePropTypes(
   classNamePropType,
-  oneOrMoreRenderableChildrenPropType,
+  oneOrMoreRenderableChildrenRequiredPropType,
   {
     withContainer: PropTypes.bool,
     with960Container: PropTypes.bool,

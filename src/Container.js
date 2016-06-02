@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import classnames from 'classnames';
-import { oneOrMoreRenderableChildrenPropType, classNamePropType, composePropTypes } from './utils';
+import { oneOrMoreRenderableChildrenRequiredPropType, classNamePropType, composePropTypes } from './utils';
 
 const Container = ({ children, size, className, ...props }) => {
   let classes = classnames(
@@ -19,7 +19,7 @@ const Container = ({ children, size, className, ...props }) => {
 };
 
 Container.propTypes = composePropTypes(
-  oneOrMoreRenderableChildrenPropType,
+  oneOrMoreRenderableChildrenRequiredPropType,
   classNamePropType,
   {
     size: PropTypes.oneOfType([
