@@ -9,7 +9,11 @@
   "main": "lib/index.js",
   "scripts": {
     "build": "babel-node tools/build-cli.js",
-    "test": "mocha test/.setup.js test/**/*-test.js"
+    "test": "mocha test/.setup.js test/**/*-test.js",
+    "patch": "release patch",
+    "minor": "release minor",
+    "major": "release major",
+    "release": "release"
   },
   "author": "Andrés Rojas <afrojas@gmail.com>",
   "bugs": {
