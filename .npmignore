@@ -1,0 +1,11 @@
+*~
+.DS_Store
+npm-debug.log*
+node_modules
+tmp-bower-repo/
+tmp-docs-repo/
+.babel-cache/
+.coverage/
+src/
+test/
+tools/
