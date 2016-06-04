@@ -1,8 +1,9 @@
 import React, { PropTypes } from 'react';
 import classnames from 'classnames';
 import { oneOrMoreRenderableChildrenPropType, classNamePropType, composePropTypes } from './utils';
+import Link from './Link';
 
-const Button = ({ children, className, loading, sStyle, href, lg, sm, block, ...props }) => {
+const Button = ({ children, className, loading, sStyle, href, lg, sm, block, to, ...props }) => {
   let classes = classnames(
     'btn',
     {
@@ -14,11 +15,21 @@ const Button = ({ children, className, loading, sStyle, href, lg, sm, block, ...
     className
   );
   let buttonStyle = null;
-  if (href) buttonStyle = 'link';
+  if (href || to) buttonStyle = 'link';
   if (sStyle) buttonStyle = sStyle;
   if (buttonStyle) classes = classnames(classes, `btn-${buttonStyle}`);
   props.className = classes;
-  return href ? <a href={href} {...props}>{children}</a> : <button {...props}>{children}</button>;
+
+  let toReturn = null;
+  if (href) {
+    toReturn = <a href={href} {...props}>{children}</a>;
+  } else if (to) {
+    toReturn = <Link to={to} {...props}>{children}</Link>;
+  } else {
+    toReturn = <button {...props}>{children}</button>;
+  }
+
+  return toReturn;
 };
 
 Button.propTypes = composePropTypes(
@@ -30,7 +41,8 @@ Button.propTypes = composePropTypes(
     href: PropTypes.string,
     lg: PropTypes.bool,
     sm: PropTypes.bool,
-    block: PropTypes.bool
+    block: PropTypes.bool,
+    to: PropTypes.string
   }
 );
 

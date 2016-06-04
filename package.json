@@ -9,6 +9,7 @@
   "main": "lib/index.js",
   "scripts": {
     "build": "babel-node tools/build-cli.js",
+    "watch-dev": "babel src --watch --out-dir lib",
     "test": "mocha test/.setup.js test/**/*-test.js",
     "patch": "release patch",
     "minor": "release minor",
@@ -42,10 +43,9 @@
     "react-dom": "^15.1.0",
     "release-script": "^1.0.2",
     "rimraf": "^2.5.2",
-    "sinon": "^1.17.4",
-    "webpack": "^1.13.1"
+    "sinon": "^1.17.4"
   },
   "dependencies": {
-    "classnames": "^2.2.5"
+    "classnames": "2.2.5"
   }
 }
