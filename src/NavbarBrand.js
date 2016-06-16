@@ -8,12 +8,13 @@ import {
 
 const NavbarBrand = ({ children, className, ...props }) => {
   let classes = classnames('navbar-brand', className);
-  if (!props.href) props.href = '#';
-  return (
-    <a className={classes} {...props}>
-      {children}
-    </a>
-  );
+  let component = null;
+  if (props.href) {
+    component = <a className={classes} {...props}>{children}</a>;
+  } else {
+    component = <span className={classes} {...props}>{children}</span>;
+  }
+  return component;
 };
 
 NavbarBrand.propTypes = composePropTypes(

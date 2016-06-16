@@ -3,21 +3,22 @@ import classnames from 'classnames';
 import { oneOrMoreRenderableChildrenPropType, classNamePropType, composePropTypes } from './utils';
 import Link from './Link';
 
-const Button = ({ children, className, loading, sStyle, href, lg, sm, block, to, ...props }) => {
+const Button = ({ children, className, loading, href, lg, sm, block, to, inputGroup, primary, clear, link, ...props }) => {
+  if (href || to) link = true;
   let classes = classnames(
     'btn',
     {
       'loading': loading,
       'btn-lg': lg,
       'btn-sm': sm,
-      'btn-block': block
+      'btn-block': block,
+      'input-group-btn': inputGroup,
+      'btn-primary': primary,
+      'btn-clear': clear,
+      'btn-link': link && !primary
     },
     className
   );
-  let buttonStyle = null;
-  if (href || to) buttonStyle = 'link';
-  if (sStyle) buttonStyle = sStyle;
-  if (buttonStyle) classes = classnames(classes, `btn-${buttonStyle}`);
   props.className = classes;
 
   let toReturn = null;
@@ -37,12 +38,15 @@ Button.propTypes = composePropTypes(
   classNamePropType,
   {
     loading: PropTypes.bool,
-    sStyle: PropTypes.string,
     href: PropTypes.string,
     lg: PropTypes.bool,
     sm: PropTypes.bool,
     block: PropTypes.bool,
-    to: PropTypes.string
+    to: PropTypes.string,
+    inputGroup: PropTypes.bool,
+    primary: PropTypes.bool,
+    clear: PropTypes.bool,
+    link: PropTypes.bool
   }
 );
 

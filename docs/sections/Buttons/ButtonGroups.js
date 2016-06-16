@@ -1,0 +1,4 @@
+import ButtonGroups from './ButtonGroups.example.js';
+export default ButtonGroups;
+
+export const STRING = "  <Container size='960'>\n    <header className='text-center'><h5>button groups</h5></header>\n    <Cols>\n      <Col>\n        <ButtonGroup>\n          <Button>first button</Button>\n          <Button>second button</Button>\n          <Button>third button</Button>\n        </ButtonGroup>\n      </Col>\n      <Col>\n        <ButtonGroup block>\n          <Button primary>first button</Button>\n          <Button primary>second button</Button>\n          <Button primary>third button</Button>\n        </ButtonGroup>\n      </Col>\n    </Cols>\n    <Cols>\n      <Col>\n        <ButtonGroup>\n          <Button sm>first button</Button>\n          <Button sm>second button</Button>\n          <Button sm>third button</Button>\n        </ButtonGroup>\n      </Col>\n    </Cols>\n  </Container>";

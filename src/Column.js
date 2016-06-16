@@ -7,14 +7,14 @@ import {
   composePropTypes
 } from './utils';
 
-const Column = ({ children, className, xs, sm, md, size=12, ...props }) => {
+const Column = ({ children, className, xs, sm, md, size, ...props }) => {
   let classes = classnames(
     'column',
-    `col-${size}`,
     {
       [`col-xs-${xs ? xs : 0}`]: xs ? true : false,
       [`col-sm-${sm ? sm : 0}`]: sm ? true : false,
-      [`col-md-${md ? md : 0}`]: md ? true : false
+      [`col-md-${md ? md : 0}`]: md ? true : false,
+      [`col-${size ? size : 0}`]: size ? true : false
     },
     className
   );

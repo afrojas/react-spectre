@@ -1,9 +1,9 @@
 import React, { PropTypes } from 'react';
 import classnames from 'classnames';
 import Container from './Container';
-import { ColumnClassNames } from './Column';
+// import { ColumnClassNames } from './Column';
 import {
-  allChildrenAreOneOfTypePropType,
+  // allChildrenAreOneOfTypePropType,
   classNamePropType,
   oneOrMoreRenderableChildrenRequiredPropType,
   composePropTypes
@@ -19,9 +19,13 @@ const ColumnsWithoutContainer = ({ children, className, ...props }) => {
   );
 };
 
+// ColumnsWithoutContainer.propTypes = composePropTypes(
+//   classNamePropType,
+//   allChildrenAreOneOfTypePropType(ColumnClassNames)
+// );
+
 ColumnsWithoutContainer.propTypes = composePropTypes(
-  classNamePropType,
-  allChildrenAreOneOfTypePropType(ColumnClassNames)
+  classNamePropType
 );
 
 const Columns = ({ children, withContainer, with960Container, with480Container, ...props }) => {

@@ -1,0 +1,4 @@
+import InputSizes from './InputSizes.example.js';
+export default InputSizes;
+
+export const STRING = "  <Container size='960'>\n      <header className='text-center'><h5>input sizes</h5></header>\n    <Cols>\n      <Col><FormInput sm type='text' placeholder='Name' /></Col>\n      <Col><FormInput lg type='text' placeholder='Name' /></Col>\n      <Col>\n        <FormSelect sm>\n          <option>Choose an option</option>\n          <option>Slack</option>\n          <option>Skype</option>\n          <option>Hipchat</option>\n        </FormSelect>\n        <FormSelect lg>\n          <option>Choose an option</option>\n          <option>Slack</option>\n          <option>Skype</option>\n          <option>Hipchat</option>\n        </FormSelect>\n      </Col>\n    </Cols>\n  </Container>";
