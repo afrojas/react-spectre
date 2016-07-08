@@ -4,9 +4,8 @@ import { classNamePropType, oneOrMoreRenderableChildrenPropType, composePropType
 
 const FormLabel = ({ children, className, ...props }) => {
   let classes = classnames('form-label', className);
-  let htmlFor = props['for'];
   return (
-    <label {...props} htmlFor={htmlFor} className={classes} >
+    <label {...props} className={classes} >
       {children}
     </label>
   );

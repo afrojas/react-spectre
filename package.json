@@ -12,7 +12,7 @@
     "watch-dev": "concurrently --kill-others 'npm run watch-lib' 'npm run watch-dist'",
     "watch-lib": "babel src --watch --out-dir lib",
     "watch-dist": "webpack --watch",
-    "watch-docs": "concurrently 'webpack-dev-server --config webpack/docs.config.babel.js --content-base dist --port 9000' 'npm run watch-dist' 'babel-node tools/docstest.js'",
+    "watch-docs": "concurrently 'webpack-dev-server --config webpack/docs.config.babel.js --content-base dist --port 9876' 'npm run watch-dist' 'babel-node tools/docstest.js'",
     "test": "mocha test/.setup.js test/**/*-test.js",
     "patch": "release patch",
     "minor": "release minor",
