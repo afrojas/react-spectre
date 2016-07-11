@@ -5,8 +5,8 @@ import { classNamePropType, oneOrMoreRenderableChildrenPropType, composePropType
 const FormSwitch = ({ children, className, ...props }) => {
   let classes = classnames('form-switch', className);
   return (
-    <label className={classes} {...props}>
-      <input type='checkbox' />
+    <label className={classes}>
+      <input type='checkbox' {...props} />
       <i className='form-icon'></i> {children}
     </label>
   );
